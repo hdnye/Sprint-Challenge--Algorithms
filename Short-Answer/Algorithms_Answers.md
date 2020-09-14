@@ -31,3 +31,4 @@ c) Constant - O(1)
 # -- As n increases, # of broken eggs increases
 # -- Split floors list // 2 & use quicksort to find lhs/rhs of f
 
+# Runtime complexity would probably be O(n log n)

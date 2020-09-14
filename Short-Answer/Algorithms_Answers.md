@@ -13,4 +13,21 @@ c) Constant - O(1)
 
 ## Exercise II
 
+# Understand
+# -- Eggs get broken if n >= f, ! if n < f
+# -- Find the value of f while dropping/breaking as few eggs as possible
+
+# Plan
+# -- Recursive or iterative sort? 
+# -- Create an empty list to hold the floors:
+#   -- floors = []
+# -- Add floors to it if > 0
+#   -- if cur_floor > 0:
+#       -- floors.append(cur_floor) 
+# -- Write f() with floors, cur_floor, eggs parameters
+# -- Find base case:
+#   -- if n == 0:
+#       -- return value of eggs 
+# -- As n increases, # of broken eggs increases
+# -- Split floors list // 2 & use quicksort to find lhs/rhs of f
 

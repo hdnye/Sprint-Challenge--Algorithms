@@ -100,35 +100,37 @@ class SortingRobot:
         # Find Base Case, can't move right or left
         # Turn light on
         # Pick up first item
-        # While? loop to iterate list & find last
+        # While? loop to iterate list & find items
         # Compare items
         # Sort items after comparing
 
         if self.can_move_right() != True:
-            return 
-
-        self.swap_item()
+           self.swap_item()
 
         while self.light_is_on():
             self.set_light_off()
 
-        while True:
-            while self.can_move_right():
-                self.set_light_on()
+        # while True:
+        while self.can_move_right():
+            self.set_light_on()                
+            if self.compare_item() == - 1 or self.compare_item() == None:
+                self.swap_item() 
                 self.move_right()
-                if self.compare_item() == 1:
-                    self.swap_item()        
-          
-            while self.compare_item() != None:
-                self.move_left()
+            else:
+                self.move_right()
+            
+        # create while loop for left
+        while self.can_move_left():                
+            if self.compare_item() == 1:
                 self.swap_item()
-                                      
-            if not self.can_move_left():
-                return
-            self.move_right()
-            self.swap_item()
-            self.set_light_off()      
-       
+                self.move_left()
+            else:
+                self.move_left()             
+      
+        # compare items
+        if self._item != None:
+            self.sort()
+               
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
